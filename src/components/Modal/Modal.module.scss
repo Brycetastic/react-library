@@ -1,0 +1,43 @@
+@import '~styles/variables';
+
+/* stylelint-disable selector-max-id */
+.overlay {
+    cursor: auto;
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease;
+
+    &:empty {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 6, 13, 0.6);
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    @media #{$below-phablet} {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.appendTo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}

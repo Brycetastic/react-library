@@ -1,0 +1,62 @@
+@import '~styles/variables';
+
+.boxWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    background-color: white;
+    border-radius: 4px;
+    margin: 0 auto;
+    box-shadow: $dropShadow;
+    overflow: hidden;
+
+    > * {
+        pointer-events: none;
+    }
+}
+
+.contentWrapper {
+    display: flex;
+
+    svg {
+        margin: 40px;
+    }
+}
+
+.children {
+    flex: 1;
+    margin: 40px 16px 16px 0;
+}
+
+.close {
+    pointer-events: all;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+
+    svg {
+        color: $gray-9;
+        height: 12px;
+        width: 12px;
+    }
+
+    &:hover svg {
+        color: $blue-primary;
+    }
+    &:active svg {
+        color: $gray-10;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    * {
+        pointer-events: none;
+    }
+}

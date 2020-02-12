@@ -1,0 +1,87 @@
+@import '~styles/variables';
+
+section.wrapper {
+    a.title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 24px;
+        background-color: $blue-primary;
+        color: white;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background-color: lighten($color: $blue-primary, $amount: 5);
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: $blue-dark;
+            color: white;
+        }
+
+        &:focus {
+            outline: none;
+            text-decoration: none;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+            transition: all 0.3s linear;
+        }
+    }
+
+    .childClass {
+        transition: all 0.2s linear;
+        overflow: hidden;
+    }
+    .active {
+        opacity: 1;
+    }
+
+    .inactive {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .arrowUp {
+        transform: rotate(180deg);
+    }
+
+    // .arrowDown {
+    //     // transform: rotate(360deg);
+    // }
+
+    &.secondary {
+        border-bottom: 1px solid $gray-10;
+
+        .title {
+            cursor: pointer;
+            padding: 10px 8px;
+            background-color: transparent;
+            color: $gray-10;
+
+            &:hover {
+                color: $gray-10;
+                background-color: $gray-1;
+            }
+
+            &:active {
+                background-color: transparent;
+                color: $gray-10;
+            }
+        }
+
+        &.activeWrapper {
+            opacity: 1;
+        }
+    }
+
+    &.secondary.activeWrapper {
+        .title {
+            font-weight: 500;
+        }
+    }
+}

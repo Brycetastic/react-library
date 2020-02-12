@@ -1,0 +1,129 @@
+@import '~styles/variables';
+
+$ovalSize: 28px;
+$lineWidth: 2px;
+
+ul.timeline {
+    padding-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+
+    li {
+        // label
+        font-size: $p2FontSize;
+        width: 20%;
+        text-align: center;
+        color: $gray-8;
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+
+        svg {
+            display: flex;
+            width: 60%;
+            height: 58%;
+        }
+
+        .oval {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: $p2FontSize;
+            font-weight: 500;
+            top: -35px;
+            width: $ovalSize;
+            height: $ovalSize;
+            border-radius: 50%;
+            position: absolute;
+            left: calc(50% - (#{$ovalSize} / 2));
+            line-height: $ovalSize;
+
+            border: $lineWidth solid $green-primary;
+            background: transparent;
+            color: $green-primary;
+        }
+
+        &::after {
+            content: ' ';
+            width: calc(100% - 36px);
+            height: 1px;
+            border-top: $lineWidth solid $gray-6;
+            position: absolute;
+            top: -22px;
+            left: calc(50% + 18px);
+        }
+
+        &.unlockedNext::after {
+            border-color: $green-primary;
+        }
+
+        &:last-child::after {
+            display: none;
+        }
+    }
+
+    // Completed
+    li.lockProgression {
+        .oval {
+            border-color: $green-primary;
+            background: transparent;
+            color: $green-primary;
+        }
+    }
+
+    // current location
+    li.active {
+        cursor: default;
+        font-weight: 600;
+
+        .oval {
+            color: white;
+            background: $green-primary;
+            border-color: $green-primary;
+        }
+    }
+
+    // not Completed
+    li.lockProgression.locked {
+        cursor: not-allowed;
+        // pointer-events: none;
+
+        .oval {
+            border-color: $gray-6;
+            background: $gray-6;
+            color: white;
+        }
+    }
+
+    li.disabled {
+        cursor: default;
+        // pointer-events: none;
+    }
+
+    li.stepDisabled {
+        .oval {
+            border-color: $gray-6;
+            background: transparent;
+            color: $gray-6;
+        }
+    }
+
+    li.allDone {
+        .oval {
+            background: transparent;
+        }
+    }
+}
+
+@media #{$below-tablet} {
+    .timeline li span {
+        opacity: 0;
+    }
+
+    .timeline li.active span {
+        opacity: 1;
+    }
+}

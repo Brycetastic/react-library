@@ -1,0 +1,64 @@
+/* Reset CSS */
+@import '../styles/base/index.scss';
+
+a.rsg--link-41,
+a.rsg--link-41:link {
+    line-height: 1.2;
+}
+
+.flexSpaceBetween {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    flex-flow: wrap;
+    > * {
+        margin: 10px;
+    }
+}
+
+.flexSpaceAround {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-flow: wrap;
+    > * {
+        margin: 10px;
+    }
+}
+
+.max-500 > * {
+    max-width: 500px;
+    svg {
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+.max-100 > * {
+    max-width: 100px;
+    svg {
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+.max-30 > * {
+    max-width: 30px;
+    max-height: 30px;
+    svg {
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+.spacingBottom {
+    & > *,
+    & > button {
+        margin-bottom: 15px;
+    }
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+}

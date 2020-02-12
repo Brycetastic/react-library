@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+
+.toggle-btn {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 2px;
+    border: 1px solid $gray-8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    font-size: $p4FontSize;
+
+    transition: $transitionAll;
+
+    &.light {
+        border-color: $gray-5;
+    }
+
+    &:hover {
+        border-color: $blue-primary;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    > svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        border-color: $gray-3;
+        background-color: $gray-2;
+    }
+}
+
+.toggle-btn.toggle-btn-on {
+    background-color: $blue-primary;
+    border-color: $blue-primary;
+
+    &.disabled {
+        border-color: $gray-2;
+    }
+}
+
+.toggle-btn.toggle-btn-on.light {
+    background-color: lighten($color: $blue-primary, $amount: 4);
+    border-color: lighten($color: $blue-primary, $amount: 4);
+}
+
+/* input */
+.toggle-input {
+    display: none;
+}

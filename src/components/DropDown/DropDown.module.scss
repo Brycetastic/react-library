@@ -1,0 +1,126 @@
+@import '../../styles/variables';
+
+.wrapper {
+    > div:first-of-type {
+        cursor: pointer;
+        line-height: 1.3;
+        height: 100%;
+
+        &:hover {
+            box-shadow: $dropShadow;
+        }
+    }
+}
+
+.wrapper.light {
+    > div:first-of-type {
+        &:hover {
+            box-shadow: none;
+            border-color: $blue-primary;
+        }
+    }
+}
+
+.dropdownArrow {
+    display: flex;
+    flex-flow: column;
+
+    svg {
+        color: $gray-10;
+        width: 8px;
+        height: 10px;
+
+        &:first-child {
+            margin-bottom: -3px;
+        }
+    }
+}
+
+.checkWrapper {
+    position: relative;
+
+    button.checkControl {
+        color: $gray-7;
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        background: $gray-3;
+        justify-content: space-between;
+        align-items: center;
+        height: 32px;
+        border-radius: 2px;
+
+        &:focus {
+            background: $gray-5;
+            outline: none;
+        }
+
+        &:hover {
+            box-shadow: $dropShadow;
+        }
+
+        .checkLabel {
+            margin-left: 12px;
+        }
+
+        .dropdownArrow {
+            margin: 0 16px;
+        }
+    }
+}
+
+ul.checkMenu {
+    position: absolute;
+    background: white;
+    padding: 16px;
+    box-shadow: $dropShadow;
+    border-radius: 2px;
+    margin-top: 4px;
+    right: 0;
+    min-width: 100%;
+
+    transition: all 0.2s linear;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    margin-bottom: 28px;
+
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    li {
+        cursor: pointer;
+        display: flex;
+        padding-bottom: 12px;
+        width: 100%;
+
+        label {
+            margin-left: 6px;
+        }
+
+        &:hover label {
+            color: $blue-primary;
+        }
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    li.checkButtons {
+        padding: 0;
+        margin-top: 5px;
+
+        button {
+            margin-left: 8px;
+            text-transform: none;
+            pointer-events: all;
+        }
+        button:first-child {
+            margin-left: 0;
+        }
+    }
+}

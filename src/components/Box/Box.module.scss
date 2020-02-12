@@ -1,0 +1,16 @@
+@import '~styles/variables';
+
+.wrapper {
+    color: $gray-9;
+    background-color: $gray-1;
+    border: 1px solid $gray-4;
+    padding: 16px;
+}
+
+.error {
+    padding: 8px 16px;
+    color: $gray-10;
+    border-radius: 3px;
+    border: 1px solid $red-dark;
+    background-color: $red-light;
+}

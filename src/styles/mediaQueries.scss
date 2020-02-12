@@ -1,0 +1,111 @@
+/**
+ * Media queries
+ */
+
+/* Base Query Variables */
+$mobile-leading: 280px;
+$mobile-xs: 320px;
+$mobile-trailing: 480px;
+
+$phablet-leading: $mobile-trailing;
+$phablet-trailing: 600px;
+
+$tablet-leading: $phablet-trailing;
+$tablet-trailing: 780px;
+
+$desktop-leading: $tablet-trailing;
+$desktop-trailing: 960px;
+
+$desktopLg-leading: $desktop-trailing;
+$desktopLg-trailing: 1200px;
+
+/* Composed Media Queries */
+/* below */
+$below-phablet: screen and
+    (
+        max-width: $phablet-leading
+    );
+$below-tablet: screen and
+    (
+        max-width: $tablet-leading
+    );
+$below-desktop: screen and
+    (
+        max-width: $desktop-leading
+    );
+$below-desktopLg: screen and
+    (
+        max-width: $desktopLg-leading
+    );
+
+/* above */
+$above-mobile: screen and
+    (
+        min-width: $mobile-trailing
+    );
+$above-phablet: screen and
+    (
+        min-width: $phablet-trailing
+    );
+$above-tablet: screen and
+    (
+        min-width: $tablet-trailing
+    );
+$above-desktop: screen and
+    (
+        min-width: $desktop-trailing
+    );
+$above-desktopLg: screen and
+    (
+        min-width: $desktopLg-trailing
+    );
+
+/* only */
+$only-mobile-xs: screen and
+    (
+        min-width: $mobile-leading
+    )
+    and
+    (
+        max-width: $mobile-xs
+    );
+$only-mobile: screen and
+    (
+        min-width: $mobile-leading
+    )
+    and
+    (
+        max-width: $mobile-trailing
+    );
+$only-phablet: screen and
+    (
+        min-width: $phablet-leading
+    )
+    and
+    (
+        max-width: $phablet-trailing
+    );
+$only-tablet: screen and
+    (
+        min-width: $tablet-leading
+    )
+    and
+    (
+        max-width: $tablet-trailing
+    );
+$only-desktop: screen and
+    (
+        min-width: $desktop-leading
+    )
+    and
+    (
+        max-width: $desktop-trailing
+    );
+$only-desktopLg: screen and
+    (
+        min-width: $desktopLg-leading
+    )
+    and
+    (
+        max-width: $desktopLg-trailing
+    );

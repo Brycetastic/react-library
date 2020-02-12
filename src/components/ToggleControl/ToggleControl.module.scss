@@ -1,0 +1,87 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.wrapper {
+    height: 40px;
+    padding: 4px;
+    padding-right: 0;
+    box-shadow: $dropShadow;
+    border-radius: 2px;
+    display: flex;
+    width: fit-content;
+
+    &.small {
+        height: 32px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        background-color: $gray-2;
+
+        &.dark {
+            background-color: $gray-3;
+        }
+
+        button:disabled {
+            color: $gray-7;
+        }
+    }
+}
+
+.button {
+    height: 100%;
+    font-weight: 300;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-image: none;
+    white-space: nowrap;
+    padding: 0 20px;
+    font-size: $p3FontSize;
+    margin: 0;
+    margin-right: 4px;
+    text-transform: capitalize;
+    outline: none;
+
+    transition: $transitionAll;
+
+    @media #{$above-mobile} {
+        font-size: $p2FontSize;
+    }
+}
+
+.active {
+    @include primaryBtnStates();
+
+    box-shadow: none;
+    border-radius: 2px;
+    pointer-events: none;
+
+    &:hover {
+        box-shadow: none;
+    }
+}
+
+.inactive {
+    @include transparentBtnStates();
+    border-radius: 2px;
+
+    &:hover {
+        background-color: $gray-3;
+        color: $gray-8;
+    }
+}
+
+.dark {
+    background-color: $gray-3;
+    box-shadow: none;
+}
+
+.inactive:hover {
+    background-color: $gray-5;
+}
+
+.darkBtn .active {
+    background-color: $gray-9;
+}

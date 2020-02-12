@@ -1,0 +1,81 @@
+@import '~styles/variables';
+
+.container {
+    span {
+        line-height: 2;
+    }
+}
+
+.dropWrapper {
+    border: 1px dashed $gray-5;
+    color: $gray-6;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 16px;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &.dragActive {
+        border-color: $blue-primary;
+        color: $gray-7;
+    }
+
+    > svg {
+        margin-bottom: 8px;
+    }
+
+    input {
+        display: none;
+    }
+}
+
+.error {
+    border-color: $red-primary;
+    color: $red-primary;
+
+    span {
+        color: $red-primary;
+    }
+}
+
+.warning {
+    border-color: $orange-primary;
+    color: $orange-primary;
+
+    span {
+        color: $orange-primary;
+    }
+}
+
+.success {
+    border-color: $green-primary;
+}
+
+.messageWrapper {
+    margin-bottom: 16px;
+}
+
+.failureMessage {
+    color: $red-primary;
+}
+
+.hasValue {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.disabled {
+    cursor: auto;
+
+    &:hover,
+    &.dragActive {
+        border-color: $gray-5;
+        color: $gray-6;
+    }
+}

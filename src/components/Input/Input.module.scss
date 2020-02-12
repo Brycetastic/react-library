@@ -1,0 +1,206 @@
+@import '../../styles/variables';
+
+div {
+    .inputWrapper {
+        width: 100%;
+        position: relative;
+
+        input,
+        textarea {
+            transition: $transitionAll;
+
+            border-radius: 2px;
+            width: 100%;
+            height: 40px;
+            font-size: $p2FontSize;
+            color: $gray-10;
+            border: 1px solid $gray-4;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            &:hover,
+            &:hover ~ .tag {
+                border-color: $blue-primary;
+            }
+
+            &:focus,
+            &:focus ~ .tag {
+                outline: 0;
+                border-color: $blue-primary;
+            }
+
+            &:disabled,
+            &:disabled ~ .tag {
+                pointer-events: none;
+                cursor: unset;
+                border-color: $gray-3;
+                color: $gray-6;
+            }
+
+            &:disabled {
+                background-color: $gray-2;
+            }
+
+            &::placeholder {
+                color: $gray-6;
+            }
+        }
+
+        textarea {
+            min-height: 40px;
+            height: inherit;
+            padding: 8px 16px;
+        }
+
+        .small input,
+        input.small {
+            height: 32px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .small input {
+            max-width: 70px;
+        }
+    }
+
+    .tagWrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .tag {
+        transition: $transitionAll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        background-color: $gray-3;
+        border-radius: 2px;
+        padding: 0 12px;
+        border: 1px solid $gray-3;
+
+        > * {
+            font-size: $p1FontSize;
+            color: $gray-10;
+            white-space: nowrap;
+        }
+    }
+
+    .small .tag {
+        padding: 0 9px;
+    }
+
+    .disabledTag .tag * {
+        color: $gray-6;
+    }
+
+    .leftTag {
+        flex-flow: row-reverse;
+
+        .tag {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+        input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+    }
+
+    .rightTag {
+        .tag {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+    }
+
+    .failureMessage {
+        font-size: $p2FontSize;
+
+        &[data-warning] {
+            color: $orange-dark;
+        }
+
+        &[data-error] {
+            color: $red-dark;
+        }
+    }
+
+    .warning {
+        input,
+        textarea,
+        .tag {
+            border-color: $orange-primary;
+        }
+
+        input,
+        textarea {
+            color: $orange-dark;
+
+            &:hover,
+            &:hover ~ .tag {
+                border-color: $orange-dark;
+            }
+            &:focus,
+            &:focus ~ .tag {
+                border-color: $orange-primary;
+            }
+            &::placeholder {
+                color: lighten($color: $orange-dark, $amount: 30);
+            }
+        }
+    }
+
+    .success {
+        input,
+        textarea,
+        .tag {
+            border-color: $green-primary;
+        }
+
+        input,
+        textarea {
+            &:hover,
+            &:hover ~ .tag {
+                border-color: $green-dark;
+            }
+            &:focus,
+            &:focus ~ .tag {
+                border-color: $green-primary;
+            }
+        }
+    }
+
+    .error {
+        input,
+        textarea,
+        .tag {
+            border-color: $red-dark;
+        }
+
+        input,
+        textarea {
+            color: $red-dark;
+
+            &:hover,
+            &:hover ~ .tag {
+                border-color: $red-primary;
+            }
+            &:focus,
+            &:focus ~ .tag {
+                border-color: $red-dark;
+            }
+            &::placeholder {
+                color: lighten($color: $red-dark, $amount: 30);
+            }
+        }
+    }
+}

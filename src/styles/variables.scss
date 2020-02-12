@@ -1,0 +1,32 @@
+@import './colors';
+@import './mediaQueries';
+
+/* Font Sizes */
+$h1FontSize: 24px;
+$h2FontSize: 20px;
+$h3FontSize: 18px;
+$h4FontSize: 16px;
+$h5FontSize: 14px;
+$h6FontSize: 13px;
+
+$p1FontSize: 16px;
+$p2FontSize: 14px;
+$p3FontSize: 13px;
+$p4FontSize: 12px;
+$p5FontSize: 11px;
+$p6FontSize: 10px;
+$p7FontSize: 8px;
+
+/* Font Weight */
+$light: 100;
+$normal: 400;
+$bold: 700;
+
+/* Font Family */
+$fontFamily: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$dropShadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+$dropShadowLarge: 0 3px 4px rgba(0, 0, 0, 0.3);
+
+$transitionAll: all 0.2s ease-in-out;
+$transitionAllSlow: all 0.4s ease-in-out;

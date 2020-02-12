@@ -1,0 +1,145 @@
+@import '~styles/variables';
+
+.toolTip {
+    position: fixed;
+    background-color: white;
+    // transition: opacity 0.4s ease;
+    z-index: 9998;
+    width: 100%;
+
+    @media #{$above-phablet} {
+        position: absolute;
+        box-shadow: none;
+        border-radius: 3px;
+        width: inherit;
+    }
+
+    // Collapse If Empty
+    &:empty {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+}
+
+.lightBox {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9997;
+    background: rgba(24, 27, 29, 0.15);
+    position: fixed;
+    top: 0;
+}
+
+button.target {
+    border: 0;
+    background: none;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.noPointer {
+        cursor: pointer;
+
+        > * {
+            pointer-events: none;
+        }
+    }
+}
+
+.tipTitle {
+    padding: 15px 40px;
+    background-color: $gray-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @media #{$above-phablet} {
+        padding: 15px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    p {
+        line-height: 1;
+    }
+
+    > svg {
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        left: 15px;
+        font-size: $p2FontSize;
+        color: $blue-primary;
+    }
+
+    button svg {
+        position: unset;
+        height: 12px;
+        width: 12px;
+        margin-left: 15px;
+    }
+}
+
+.tipInnerTitle {
+    display: flex;
+    align-items: center;
+}
+
+.tipTitle button {
+    border: 0;
+    background: none;
+
+    &:hover {
+        cursor: pointer;
+
+        i {
+            color: $blue-primary;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.tipContent {
+    margin: 15px 40px;
+
+    @media #{$above-phablet} {
+        margin: 15px;
+    }
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: $gray-9;
+    color: white;
+}
+
+.toolTipIn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toolTipOut {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hideTipDisplay {
+    display: none;
+}
+
+// boxShadow options
+.low {
+    box-shadow: $dropShadow;
+}
+.large {
+    box-shadow: $dropShadowLarge;
+}

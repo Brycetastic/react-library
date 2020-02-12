@@ -1,0 +1,87 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.button {
+    height: 40px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-image: none;
+    white-space: nowrap;
+    padding: 0 20px;
+    font-size: $p3FontSize;
+    margin: 0;
+    text-transform: capitalize;
+    outline: none;
+    font-family: $fontFamily;
+
+    transition: $transitionAll;
+
+    @media #{$above-mobile} {
+        font-size: $p2FontSize;
+    }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        margin: 0 15px;
+    }
+}
+
+.primary {
+    @include primaryBtnStates();
+}
+
+.secondary {
+    @include secondaryBtnStates();
+}
+
+.tertiary {
+    @include tertiaryBtnStates();
+}
+
+.transparent {
+    @include transparentBtnStates();
+}
+
+.menu {
+    height: inherit;
+    padding: 12px 8px;
+    text-align: left;
+    width: 100%;
+    background-color: transparent;
+    color: $gray-10;
+    border: 0;
+
+    &:hover {
+        background-color: $blue-primary;
+        color: white;
+    }
+
+    &:active {
+        background-color: $blue-dark;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        background-color: transparent;
+        color: $gray-6;
+    }
+}
+
+.medium {
+    height: 30px;
+    padding: 0 16px;
+}
+
+.small {
+    height: 20px;
+    padding: 0 12px;
+    font-size: $p4FontSize;
+}

@@ -1,0 +1,60 @@
+@import '~styles/variables';
+
+.boxWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: $dropShadow;
+    overflow: hidden;
+
+    > * {
+        pointer-events: none;
+    }
+}
+
+.title {
+    padding: 16px 50px 16px 24px;
+    line-height: 1;
+    border-bottom: 1px solid $gray-4;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.close {
+    pointer-events: all;
+    padding: 22px 16px 16px;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+
+    svg {
+        color: $gray-9;
+        height: 12px;
+        width: 12px;
+    }
+
+    &:hover svg{
+        color: $blue-primary;
+    }
+    &:active svg {
+        color: $gray-10;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    * {
+        pointer-events: none;
+    }
+}
+
+.modalBodyOpen {
+    overflow: hidden;
+}

@@ -1,0 +1,92 @@
+@import '~styles/variables';
+
+@keyframes load1 {
+    0% {
+        opacity: 0.2;
+    }
+    33% {
+        opacity: 0.2;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+@keyframes load2 {
+    0% {
+        opacity: 0.2;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+@keyframes load3 {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0.2;
+    }
+    66% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.dotLoader * {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+.dotLoaderG {
+    -webkit-transform: translate(-768px, -2996px);
+    transform: translate(-768px, -2996px);
+}
+.dotLoader1 {
+    -webkit-transform: translate(768px, 2996px);
+    transform: translate(768px, 2996px);
+    // fill: $blue-primary;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    opacity: 1;
+    -webkit-animation-name: load3;
+    animation-name: load3;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+.dotLoader2 {
+    -webkit-transform: translate(786px, 2996px);
+    transform: translate(786px, 2996px);
+    // fill: $blue-primary;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    opacity: 0.2;
+    -webkit-animation-name: load2;
+    animation-name: load2;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+.dotLoader3 {
+    -webkit-transform: translate(804px, 2996px);
+    transform: translate(804px, 2996px);
+    // fill: $blue-primary;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    opacity: 0.2;
+    -webkit-animation-name: load1;
+    animation-name: load1;
+    -webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+}

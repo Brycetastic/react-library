@@ -1,0 +1,137 @@
+@import './variables';
+@import './colors';
+
+@mixin ospHeader() {
+    margin: -20px -24px 0;
+    padding: 20px 24px 12px;
+    background: $gray-3;
+    position: fixed;
+    width: 100%;
+}
+
+@mixin ospBody() {
+    margin-top: 92px;
+}
+
+@mixin headerSpacing() {
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+@mixin headerPosition() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+@mixin btnStates() {
+    cursor: pointer;
+    box-shadow: $dropShadow;
+    border-radius: 2px;
+
+    &:hover {
+        box-shadow: $dropShadowLarge;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:disabled {
+        border-color: $gray-6;
+        pointer-events: none;
+        background-color: transparent;
+        color: $gray-7;
+        box-shadow: none;
+    }
+}
+
+@mixin inlineBtnStates() {
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 2px;
+
+    &:hover {
+        box-shadow: $dropShadow;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+
+    &:disabled {
+        border-color: $gray-4;
+        pointer-events: none;
+        background-color: transparent;
+        color: $gray-6;
+        box-shadow: none;
+    }
+}
+
+@mixin primaryBtnStates() {
+    @include btnStates();
+
+    color: white;
+    background-color: $blue-primary;
+    border: 1px solid $blue-primary;
+
+    &:hover {
+        background-color: $blue-primary;
+    }
+
+    &:active {
+        background-color: $blue-dark;
+    }
+}
+
+@mixin secondaryBtnStates() {
+    @include btnStates();
+
+    color: $blue-dark;
+    background-color: white;
+    border: 1px solid white;
+
+    &:hover {
+        background-color: white;
+    }
+
+    &:active {
+        background-color: $gray-5;
+        border-color: $gray-5;
+    }
+}
+
+@mixin tertiaryBtnStates() {
+    @include inlineBtnStates();
+
+    color: $gray-10;
+    background-color: $gray-3;
+    border: 1px solid $gray-3;
+
+    &:hover {
+        background-color: $gray-3;
+    }
+
+    &:active {
+        background-color: $gray-5;
+        border-color: $gray-5;
+    }
+}
+
+@mixin transparentBtnStates() {
+    cursor: pointer;
+    color: $gray-9;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    &:hover {
+        background-color: transparent;
+        color: $blue-dark;
+    }
+
+    &:active {
+        background-color: transparent;
+        border-color: $gray-5;
+    }
+}

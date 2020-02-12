@@ -1,0 +1,102 @@
+@import '~styles/variables';
+
+div {
+    .notificationWrapper {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.2s ease;
+        width: 100%;
+
+        > * {
+            pointer-events: none;
+        }
+    }
+
+    .title {
+        padding: 0 0 0 13px;
+        box-shadow: $dropShadow;
+        margin: 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h5 {
+            margin: 8px 0 8px 13px;
+            flex: 1;
+        }
+
+        > svg {
+            height: 16px;
+            width: 16px;
+        }
+    }
+
+    .close {
+        pointer-events: all;
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        padding: 8px 13px;
+
+        svg {
+            color: rgba(255, 255, 255, 0.85);
+            height: 12px;
+            width: 12px;
+        }
+
+        &:hover svg {
+            color: white;
+        }
+        &:active svg {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        &:focus {
+            outline: none;
+        }
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    .success {
+        .title {
+            background-color: $green-primary;
+        }
+
+        .children {
+            background-color: $green-tint;
+        }
+    }
+
+    .info {
+        .title {
+            background-color: $blue-primary;
+        }
+
+        .children {
+            background-color: $blue-tint;
+        }
+    }
+
+    .warning {
+        .title {
+            background-color: $orange-primary;
+        }
+
+        .children {
+            background-color: $orange-light;
+        }
+    }
+
+    .error {
+        .title {
+            background-color: $red-dark;
+        }
+
+        .children {
+            background-color: $red-tint;
+        }
+    }
+}

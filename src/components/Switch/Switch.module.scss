@@ -1,0 +1,100 @@
+/*
+toggle styles copied and modified from
+https://codepen.io/mallendeo/pen/eLIiG
+by Mauricio Allende (https://mallendeo.com/)
+ */
+@import '../../styles/variables';
+
+$padding: 2px;
+/* switch container */
+.toggle-btn {
+    position: relative;
+    box-sizing: initial;
+    display: inline-block;
+    outline: 0;
+    width: 40px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    background: $gray-5;
+    border: 1px solid $gray-3;
+    border-radius: 4em;
+    padding: $padding 6px;
+    transition: all 0.4s ease;
+    box-shadow: none;
+    color: white;
+    font-size: $p4FontSize;
+    line-height: 24px;
+    text-align: right;
+
+    &.small {
+        width: 16px;
+        height: 8px;
+        padding: $padding;
+    }
+}
+.toggle-btn.toggle-btn-on {
+    background: $green-primary;
+    text-align: left;
+}
+.toggle-btn.toggle-btn-on:active {
+    box-shadow: none;
+}
+
+/* switch handel */
+.toggle-btn::after {
+    left: $padding;
+    top: $padding;
+    position: absolute;
+    display: block;
+    content: '';
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+    border-radius: 4em;
+    background: $white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    box-shadow: 0 2px 3px $gray-6;
+}
+.toggle-btn.toggle-btn-on::after {
+    left: 50%;
+}
+
+.toggle-btn.small::after {
+    left: 1px;
+    top: 1px;
+    width: calc(50%);
+    height: calc(100% - 2px);
+    box-shadow: none;
+}
+.toggle-btn.toggle-btn-on.small::after {
+    left: calc(50% - 1px);
+}
+
+.toggle-btn:focus::after,
+.toggle-btn:active::after {
+    box-sizing: initial;
+}
+.toggle-btn:active::after {
+    padding-right: 1.6em;
+}
+.toggle-btn.toggle-btn-on:active::after {
+    margin-left: -1.6em;
+}
+
+.toggle-btn:active.small::after {
+    padding-right: 0.6em;
+}
+.toggle-btn.toggle-btn-on.small:active::after {
+    margin-left: -0.6em;
+}
+
+/* input */
+.toggle-input {
+    display: none;
+}
+
+/* disabled */
+.disabled {
+    pointer-events: none;
+}

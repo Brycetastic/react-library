@@ -1,0 +1,20 @@
+/**
+ * Importing Global Less Files in Cascading Order
+ *
+ *
+ * Files with .lib are ignored by stylelint
+ *
+ * Be Cautious when mixing CSS and Less together.
+ * The CSS Files will always end up taking precedence above the LESS files.
+ * Try to stick to .less files and you'll be fine.
+ * This is a ExtractTextPlugin Webpack Issue: https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/200#issuecomment-237810249
+*/
+
+    /* Reset CSS */
+    @import "reset.lib.scss";
+    /* Normalize CSS */
+    @import "normalize.lib.scss";
+    /* Standard Global CSS styling */
+    @import "standard";
+    /* Typography CSS */
+    @import "typography";

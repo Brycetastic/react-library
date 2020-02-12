@@ -1,0 +1,74 @@
+@import '../colors';
+@import '../variables';
+
+/* Headers */
+h1 {
+    color: $gray-10;
+    font-size: $h1FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+h2 {
+    font-size: $h2FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+h3 {
+    font-size: $h3FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+h4 {
+    font-size: $h4FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+h5 {
+    font-size: $h5FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+h6 {
+    font-size: $h6FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+/* Standard Paragraph */
+p {
+    font-size: $p2FontSize;
+    font-weight: $normal;
+    margin: 0;
+}
+
+/* Standard Anchor */
+a {
+    color: $blue-primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:active {
+        color: $blue-dark;
+    }
+}
+
+label {
+    margin-bottom: 0;
+    font-weight: $normal;
+}
+
+/* Root Font */
+body {
+    color: $gray-8;
+    font: 100% $fontFamily;
+    font-size: $p2FontSize;
+    line-height: 1;
+}

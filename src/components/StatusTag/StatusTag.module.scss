@@ -1,0 +1,42 @@
+@import '~styles/variables';
+
+div {
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $gray-10;
+        padding: 0 8px;
+        height: 16px;
+        line-height: 16px;
+        width: 90%;
+        max-width: 100px;
+        font-size: $p5FontSize;
+        text-transform: capitalize;
+        border-radius: 2px;
+    }
+
+    .purple {
+        background-color: #ebd9f7;
+    }
+
+    .green {
+        background-color: #d9f7df;
+    }
+
+    .green-dark {
+        background-color: #c4e5c3;
+    }
+
+    .yellow {
+        background-color: #f6f7d9;
+    }
+
+    .blue {
+        background-color: #d9eff7;
+    }
+
+    .grey {
+        background-color: #e3e0e5;
+    }
+}

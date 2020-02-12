@@ -1,0 +1,300 @@
+@import '../../styles/variables';
+
+.dateSelectWrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    p.failureMessage {
+        width: 100%;
+        font-size: $p2FontSize;
+        line-height: 1.3;
+
+        &.successMessage {
+            color: $green-dark;
+        }
+
+        &.errorMessage {
+            color: $red-dark;
+        }
+
+        &.warningMessage {
+            color: $orange-dark;
+        }
+
+        &.message {
+            color: $gray-6;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid $gray-4;
+    width: fit-content;
+    transition: $transitionAll;
+
+    input {
+        color: $blue-primary;
+    }
+
+    &:hover {
+        border-color: $blue-primary;
+        svg.calendarIcon {
+            color: $blue-primary;
+        }
+        input {
+            color: $blue-primary;
+        }
+    }
+
+    &:focus-within {
+        border-color: $blue-primary;
+        input {
+            color: $blue-primary;
+        }
+        svg.calendarIcon {
+            color: $blue-primary;
+        }
+    }
+
+    &.disabledTag {
+        pointer-events: none;
+    }
+}
+
+.warning {
+    border: 1px solid $orange-primary;
+    color: $orange-dark;
+    input {
+        color: $orange-dark;
+    }
+}
+
+.error {
+    border: 1px solid $red-dark;
+    color: $red-dark;
+    input {
+        color: $red-dark;
+    }
+}
+
+.rangeWrapper input:focus {
+    color: $blue-primary;
+
+    &::placeholder {
+        color: $blue-dark;
+        opacity: 1;
+    }
+}
+
+.monthNav {
+    margin: 0 16px;
+    top: 16px;
+    position: absolute;
+
+    border: 0;
+    border-radius: 2px;
+    background-color: $gray-3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($color: $gray-3, $amount: 2);
+    }
+
+    &:active {
+        background-color: $gray-5;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    svg {
+        width: 10px;
+        height: 16px;
+        color: $gray-10;
+    }
+}
+
+svg.calendarIcon {
+    height: 14px;
+    width: 11px;
+    color: $gray-6;
+}
+
+:global {
+    .smallDate .DateInput {
+        width: 98px;
+        padding: 4px 8px;
+
+        > input::placeholder {
+            color: $gray-6;
+        }
+    }
+    .smallDate .SingleDatePickerInput__showClearDate {
+        padding-right: 20px;
+    }
+
+    .DateInput {
+        width: 86px;
+
+        > input {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            font-weight: 400;
+            font-size: $p2FontSize;
+            font-family: $fontFamily;
+
+            &::placeholder {
+                color: $blue-primary;
+            }
+        }
+
+        > svg {
+            top: 43px;
+        }
+    }
+
+    .CalendarDay {
+        vertical-align: middle;
+    }
+
+    // Will edit everything selected including everything between a range of dates
+    .CalendarDay__selected_span,
+    .CalendarDay__highlighted_calendar {
+        background: $blue-light; //background
+        color: white; //text
+        border: 1px solid #52acdc; //default styles include a border
+
+        &:hover {
+            background: $blue-primary;
+        }
+    }
+
+    // Will edit selected date or the endpoints of a range of dates
+    .CalendarDay__selected {
+        background: $blue-primary;
+        color: white;
+
+        &:hover {
+            background: $blue-primary;
+            color: white;
+        }
+    }
+
+    // Will edit when the second date (end date) in a range of dates
+    // is not yet selected. Edits the dates between your mouse and said date
+    .CalendarDay__hovered_span:hover,
+    .CalendarDay__hovered_span {
+        color: white;
+        border: 1px solid #52acdc;
+        background: $blue-light;
+    }
+
+    .CalendarDay__default:hover {
+        color: white;
+        background: $blue-light;
+    }
+
+    .CalendarMonth_caption strong {
+        font-weight: 400;
+    }
+
+    .CalendarDay__blocked_calendar {
+        background: $gray-3;
+        border-color: $gray-5;
+        color: $gray-7;
+        pointer-events: none;
+    }
+
+    .CalendarDay__blocked_out_of_range {
+        pointer-events: none;
+        background: white;
+        border-color: #e4e7e7;
+        color: #cacccd;
+    }
+    .right_picker .SingleDatePicker_picker {
+        top: initial !important;
+        left: initial !important;
+    }
+    // .right_picker .SingleDatePicker_picker {
+    //     top: initial !important;
+    //     left: -328px !important;
+    // }
+    .SingleDatePicker_picker {
+        bottom: -1px;
+        right: -328px;
+        width: fit-content;
+        height: fit-content;
+        z-index: 9999;
+    }
+    .SingleDatePicker_picker__directionLeft,
+    .DateRangePicker_picker__directionLeft {
+        margin: 10px 0 0 -1px;
+    }
+
+    .SingleDatePickerInput,
+    .DateRangePickerInput {
+        display: flex;
+        align-items: center;
+    }
+
+    .SingleDatePickerInput_calendarIcon,
+    .DateRangePickerInput_calendarIcon {
+        margin: 0;
+        display: flex;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .SingleDatePickerInput_clearDate__small {
+        margin: 0;
+        display: flex;
+
+        &:hover {
+            background: none;
+
+            * {
+                fill: $blue-primary;
+            }
+        }
+
+        &:active {
+            outline: none;
+            * {
+                fill: $blue-dark;
+            }
+        }
+    }
+    .DateInput_input {
+        outline: none;
+    }
+    .SingleDatePickerInput__disabled,
+    .SingleDatePickerInput__disabled input,
+    .DateInput_input__disabled {
+        background-color: $gray-2;
+        font-style: normal;
+        color: $gray-6;
+    }
+
+    .DateRangePickerInput_arrow {
+        margin-right: 8px;
+    }
+
+    body > div > .SingleDatePicker_picker {
+        top: -212px !important;
+        left: -330px !important;
+    }
+}
+
+// DateInput_input DateInput_input_1 DateInput_input__focused DateInput_input__focused_2
+// SingleDatePicker_picker SingleDatePicker_picker_1 SingleDatePicker_picker__directionLeft SingleDatePicker_picker__directionLeft_2
